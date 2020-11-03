@@ -1,0 +1,1 @@
+## exercice sur les assurances
