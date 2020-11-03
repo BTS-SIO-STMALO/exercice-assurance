@@ -6,6 +6,24 @@
     <title>Assurance</title>
 </head>
 <body>
+    <?php
+    
+    
+    // 1. Créer mes variables pour contenir mes infos clients
+    // 2. Ecrire le scripts pour déterminer le palier de tarif
+    // 3. Affiche le résultat
+
+    // J'initialise mes variables
+    $age = 30;
+    $seniorityDriverLicence=2;
+    $responsibleAccidentCount=0;
+    $seniorityInsurance =6;
+
+
+    ;?>
+    
+    
+    
     <h1>Calculer votre tarif d'assurance</h1>
     <form>
         <div>
