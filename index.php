@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assurance</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <?php
@@ -19,14 +20,16 @@
     $seniorityDriverLicence=2;
     $responsibleAccidentCount=0;
     $seniorityInsurance =6;
-    $level = 1;
     */
+    
     // Avant de me lancer dans l'algorithmie, je vérifie que déjà je reçois bien les infos de mon formulaire comme je l'ai formatté :
     //var_dump($_POST);
     
     // Pour déclencher mes algorithmes, je vérifie que ma super globale $_POST contient bien des valeurs
     
     if (!empty($_POST)){
+
+        $level = 1;
 
         // Je récupère les valeurs issues de mon formulaire et je vérifie leur cohérence 
 
@@ -91,12 +94,42 @@
 
     }
 
-
+    /*
+    if (!empty($level)){
+        echo $level;
+    }
+    */
     ;?>
     
     
     
     <h1>Calculer votre tarif d'assurance</h1>
+
+    <?php if(isset($level)) : ?>
+        <?php 
+        if ($level ==0){
+            $message = "Refus d'assurer";
+            $cssClass = "grey";
+        }elseif ($level==1){
+            $message = "Rouge";
+            $cssClass ="red";
+        }elseif ($level == 2){
+            $message = "Orange";
+            $cssClass= "orange";
+        }elseif ($level == 3){
+            $message = "Vert";
+            $cssClass ="green";
+        }elseif($level== 4){
+            $message ="Bleu";
+            $cssClass ="blue";
+        }
+        ?>
+        <p>Vous avez le droit au tarif <strong class="<?= $cssClass; ?>"> <?= $message ?></strong></p>
+
+        <p>Vous avez le droit au tarif <strong style="color:<?=$cssClass?>"><?= $message ?> </strong></p>
+
+    <?php endif;?>
+
     <form action="" method="post">
         <div>
             <label>Indiquez votre âge svp</label>
